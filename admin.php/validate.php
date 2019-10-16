@@ -16,6 +16,6 @@ echo "Starting to validate the page";
         header("Location:admin.html");
     }
     else{
-        echo "Invalid credentials<br><a href='login.html'>back</a>;
+        echo "Invalid credentials<br><a href='login.html'>back</a>";
     }
 ?>

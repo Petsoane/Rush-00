@@ -1,0 +1,18 @@
+body{
+    background-color: aqua;
+}
+#wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+    padding: 0px;
+    margin-top: 100px;
+}
+
+.field{
+    border: none;
+    width: 50%;
+    height: 25px;
+}
+

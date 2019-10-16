@@ -1,16 +1,8 @@
 <?php
-$servername = "localhost";
-$username = 'root';
-$passwd = 'theophylus';
-$dbname = 'accounts';
+session_start();
+include("../resources/startConnect.php");
 
-$conn = mysqli_connect($servername, $username,$passwd, $dbname);
-
-// check connection
-if (!$conn){
-    die("Connection failed".mysqli_connect_error());
-}
-
+$conn = start();
 // create sql code to get the contents of database
 $name = $_POST['name'];
 $sql = "SELECT * from users where username like '$name'";
@@ -18,7 +10,10 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) == 1){
     echo "users exists";
+    $_SESSION['user_name'] = $name;
+    $_SESSION['passwd'] = $_POST['password'];
 }
-else   
-    echo "Error";
+else // this is where the error code will go.
+    echo "User does no exist";
+mysqli_close($conn);
 ?>
